@@ -19,19 +19,18 @@ export default function DashboardTabNavigator() {
                     type Routes = {
                         [key: string]: JSX.Element;
                     };
-
                     const routes: Routes = {
                         Home: (
-                            <Ionicons name="home-outline" size={33} color="#ffffff" />
+                            <Ionicons name="home-outline" size={24} color={"#ffffff"} />
                         ),
                         Transfers: (
-                            <FontAwesome name="exchange" size={33} color="#ffffff" />
+                            <FontAwesome name="exchange" size={24} color="#ffffff" />
                         ),
                         Deposit: (
-                            <FontAwesome name="money" size={33} color="#ffffff" />
+                            <FontAwesome name="money" size={24} color="#ffffff" />
                         ),
                         Plans: (
-                            <MaterialCommunityIcons name="currency-usd-circle-outline" size={40} color="#ffffff" />
+                            <MaterialCommunityIcons name="currency-usd-circle-outline" size={28} color="#ffffff" />
                         ),
                     };
                     return routes[route.name];
@@ -39,18 +38,16 @@ export default function DashboardTabNavigator() {
             })}
             tabBarOptions={{
                 activeTintColor: 'white',
-                inactiveTintColor: 'white',
+                inactiveTintColor: '#777',
                 showLabel: true,
                 style: {
                     borderTopWidth: 0,
                     position: 'absolute',
-                    backgroundColor: '#68DE5A',
+                    backgroundColor: '#474898',
                     borderTopColor: 'transparent',
-                    height: isIos ? 110 : 90,
+                    height: isIos ? 90 : 70,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
                 },
                 tabStyle: {
                     backgroundColor: 'transparent',
