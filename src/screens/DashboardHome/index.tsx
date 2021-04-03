@@ -95,13 +95,13 @@ const DashboardHome: React.FC<Props> = ({ navigation }) => {
         getApiInfo();
     }, [dispatch]);
 
-    // let debitBalance;
-    // let debitTransactions;
-    // let debitTransactionsSum;
-    // let income;
-    // let outcome;
-    // let incomeSum;
-    // let outcomeSum;
+    let debitBalance;
+    let debitTransactions;
+    let debitTransactionsSum;
+    let income;
+    let outcome;
+    let incomeSum;
+    let outcomeSum;
 
     if (!loading) {
         debitBalance = debitAccount!.saldo;
