@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import {FormHandles} from '@unform/core';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {useNavigation} from '@react-navigation/native';
-import {KeyboardAvoidingView, Platform, TextInput} from 'react-native';
+import {KeyboardAvoidingView, Platform, TextInput, Text} from 'react-native';
 import shortid from 'shortid';
 
 import ButtonPrimary from '../../components/ButtonPrimary';
@@ -22,10 +22,14 @@ import InputMasked from '../../components/InputMasked';
 import {Feather} from '@expo/vector-icons';
 
 // criar interface
+interface ITransferForm{
+    descricao: string,
+    valor: number,
+    destinatario: string,
+}
 
 export default function Transfers() {
     const navigation = useNavigation();
-
     const formRef = useRef<FormHandles>(null);
     const descInputRef = useRef<TextInput>(null);
     const valueInputRef = useRef<TextInput>(null);
@@ -120,7 +124,6 @@ export default function Transfers() {
             dispatch(
                 debitTransactionSuccess({
                     ...postData,
-                    // Id must be created here since the API don't return it
                     id: shortid(),
                     valor: Number(valor),
                     planoConta,
@@ -159,6 +162,7 @@ export default function Transfers() {
                             <S.TextHeaderCard>Transferências</S.TextHeaderCard>
                         </S.HeaderCard>
                         <S.DepositForm ref={formRef} onSubmit={handleSubmit}>
+                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Destinatário</Text>
                         <Input
                             name="destinatario"
                             placeholder="Destinatário"
@@ -170,6 +174,7 @@ export default function Transfers() {
                                 descInputRef.current?.focus();
                             }}
                         />
+                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Descrição</Text>
                         <Input
                             name="descricao"
                             placeholder="Descrição"
@@ -181,7 +186,7 @@ export default function Transfers() {
                                 valueInputRef.current?.focus();
                             }}
                         />
-
+                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Valor</Text>
                         <InputMasked
                             mask="BRL"
                             name="valor"
@@ -225,8 +230,9 @@ export default function Transfers() {
                             onPress={submitFormButton}
                             marginTop="20px"
                             marginBottom="30px"
-                            bgColor="#63dc3f"
+                            bgColor="#474898"
                             color="#fff"
+                            style={{ borderRadius: 6 }}
                             _loading={loading}
                         />
                         </S.DepositForm>

@@ -43,7 +43,7 @@ export const TextInput = styled.TextInput`
 export const MaxValue = styled.Text`
     padding: 5px 10px;
     border-radius: 5px;
-    color: #8c52e5;
+    color: #474898;
     position: absolute;
     top: 50px;
 `;
