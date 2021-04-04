@@ -143,7 +143,7 @@ export default function Deposit() {
                         <S.IconHeaderCard
                             source={require('../../assets/icon-money.png')}
                         />
-                        <S.TextHeaderCard>Depositos</S.TextHeaderCard>
+                        <S.TextHeaderCard>Novo deposito</S.TextHeaderCard>
                     </S.HeaderCard>
                     <S.DepositForm ref={formRef} onSubmit={handleSubmit}>
                         <Text style={{ width: '100%', fontWeight: 'bold' }}>Descrição</Text>

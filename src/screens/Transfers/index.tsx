@@ -159,7 +159,7 @@ export default function Transfers() {
                             <S.IconHeaderCard
                                 source={require('../../assets/icon-money.png')}
                             />
-                            <S.TextHeaderCard>Transferências</S.TextHeaderCard>
+                            <S.TextHeaderCard>Nova transferência</S.TextHeaderCard>
                         </S.HeaderCard>
                         <S.DepositForm ref={formRef} onSubmit={handleSubmit}>
                         <Text style={{ width: '100%', fontWeight: 'bold' }}>Destinatário</Text>
