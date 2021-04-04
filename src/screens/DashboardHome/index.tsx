@@ -120,7 +120,7 @@ const DashboardHome: React.FC<Props> = ({ navigation }) => {
     const toggleHideInfo = () => dispatch(toggleTransactionVisibility());
 
     return (
-        <ContainerScroll>
+        <ContainerScroll _bgColor="#5E60CE">
             <ContainerViewDashboard>
                 <S.HeaderDashboard>
                     <S.TextHeaderDashboard>

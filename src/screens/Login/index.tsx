@@ -115,62 +115,62 @@ export default function Login() {
             keyboardVerticalOffset={10}
         >
             <ContainerScroll>
-                <SafeAreaView/>
-                    <ContainerLogoGama mTop="0px" mBottom="0px" />
-                    <ContainerViewLoginRegister>
-                        <WhiteCardLoginRegister title="Seja bem vindo, informe seus dados para logar.">
-                            <LoginForm ref={formRef} onSubmit={loginSysGama}>
-                                <Input
-                                    name="login"
-                                    placeholder="Digite seu usuário"
-                                    autoCapitalize="none"
-                                    autoCorrect={false}
-                                    returnKeyType="next"
-                                    onSubmitEditing={() => {
-                                        passwordInputRef.current?.focus();
-                                    }}
+                <SafeAreaView />
+                <ContainerLogoGama mTop="40px" mBottom="40px" />
+                <ContainerViewLoginRegister>
+                    <WhiteCardLoginRegister title="Seja bem vindo, informe seus dados para logar.">
+                        <LoginForm ref={formRef} onSubmit={loginSysGama}>
+                            <Input
+                                name="login"
+                                placeholder="Digite seu usuário"
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    passwordInputRef.current?.focus();
+                                }}
+                            />
+                            <Input
+                                ref={passwordInputRef}
+                                name="passwd"
+                                placeholder="Digite sua Senha"
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                secureTextEntry
+                                returnKeyType="send"
+                                onSubmitEditing={submitFormButton}
+                            />
+                            <ButtonPrimary
+                                title="Continuar"
+                                iconName="arrow-right"
+                                iconColor="#fff"
+                                iconSize={25}
+                                marginTop="20px"
+                                marginBottom="30px"
+                                bgColor="#474898"
+                                color="#fff"
+                                onPress={submitFormButton}
+                                _loading={loading}
+                            />
+                            <LinksBottom onPress={navForgetPassword}>
+                                Esqueci minha senha{' '}
+                                <Feather
+                                    name="chevron-right"
+                                    size={13}
+                                    color="#8C52E5"
                                 />
-                                <Input
-                                    ref={passwordInputRef}
-                                    name="passwd"
-                                    placeholder="Digite sua Senha"
-                                    autoCapitalize="none"
-                                    autoCorrect={false}
-                                    secureTextEntry
-                                    returnKeyType="send"
-                                    onSubmitEditing={submitFormButton}
+                            </LinksBottom>
+                            <LinksBottom onPress={navCreateAccount}>
+                                Ainda não sou cliente{' '}
+                                <Feather
+                                    name="chevron-right"
+                                    size={13}
+                                    color="#8C52E5"
                                 />
-                                <ButtonPrimary
-                                    title="Continuar"
-                                    iconName="arrow-right"
-                                    iconColor="#fff"
-                                    iconSize={25}
-                                    marginTop="20px"
-                                    marginBottom="30px"
-                                    bgColor="#474898"
-                                    color="#fff"
-                                    onPress={submitFormButton}
-                                    _loading={loading}
-                                />
-                                <LinksBottom onPress={navForgetPassword}>
-                                    Esqueci minha senha{' '}
-                                    <Feather
-                                        name="chevron-right"
-                                        size={13}
-                                        color="#5E60CE"
-                                    />
-                                </LinksBottom>
-                                <LinksBottom onPress={navCreateAccount}>
-                                    Ainda não sou cliente{' '}
-                                    <Feather
-                                        name="chevron-right"
-                                        size={13}
-                                        color="#5E60CE"
-                                    />
-                                </LinksBottom>
-                            </LoginForm>
-                        </WhiteCardLoginRegister>
-                    </ContainerViewLoginRegister>
+                            </LinksBottom>
+                        </LoginForm>
+                    </WhiteCardLoginRegister>
+                </ContainerViewLoginRegister>
             </ContainerScroll>
         </KeyboardAvoidingView>
     );

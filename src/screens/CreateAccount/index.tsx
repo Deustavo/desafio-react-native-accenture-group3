@@ -1,7 +1,7 @@
-import React, {useRef, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, { useRef, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import ButtonPrimary from '../../components/ButtonPrimary';
-import {LinksBottom, CreateAccountForm} from './styles';
+import { LinksBottom, CreateAccountForm } from './styles';
 import WhiteCardLoginRegister from '../../components/WhiteCardLoginRegister';
 import Feather from 'react-native-vector-icons/Feather';
 import ContainerViewLoginRegister from '../../components/ContainerViewLoginRegister';
@@ -10,9 +10,9 @@ import * as Yup from 'yup';
 import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 import Input from '../../components/Input';
-import {FormHandles} from '@unform/core';
+import { FormHandles } from '@unform/core';
 import ContainerLogoGama from '../../components/LogoGama';
-import {KeyboardAvoidingView, Platform, TextInput} from 'react-native';
+import { KeyboardAvoidingView, Platform, TextInput } from 'react-native';
 import InputMasked from '../../components/InputMasked';
 
 // criar interface
@@ -40,7 +40,7 @@ export default function CreateAccount() {
     }
 
     async function handleSubmit(data: FormFields) {
-        const {cpf, name, fullName, passwd} = data;
+        const { cpf, name, fullName, passwd } = data;
         try {
             formRef.current?.setErrors({});
             const schema = Yup.object({
@@ -53,12 +53,12 @@ export default function CreateAccount() {
                     .oneOf([Yup.ref('passwd'), null], 'Senhas diferentes'),
             });
 
-            await schema.validate(data, {abortEarly: false});
+            await schema.validate(data, { abortEarly: false });
 
             setLoading(true);
 
             const formData = {
-                cpf: cpf.replace(/\.|-/gm, ''), 
+                cpf: cpf.replace(/\.|-/gm, ''),
                 login: name,
                 nome: fullName,
                 senha: passwd,
@@ -77,16 +77,27 @@ export default function CreateAccount() {
 
     return (
         // adicionar SafeAreaView
-        <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center',}}
-                              behavior={Platform.OS === "ios" ? "padding" : "height"} enabled keyboardVerticalOffset={10}>
+        <KeyboardAvoidingView
+            style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+            }}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            enabled
+            keyboardVerticalOffset={10}
+        >
             <ContainerScroll>
-                <ContainerLogoGama mTop="50px" mBottom="20px"/>
+                <ContainerLogoGama mTop="50px" mBottom="20px" />
                 <ContainerViewLoginRegister>
                     <WhiteCardLoginRegister
                         title="Peça sua conta e cartão de crédito do Gama Bank"
                         pdHorizontal="40px"
                     >
-                        <CreateAccountForm ref={formRef} onSubmit={handleSubmit}>
+                        <CreateAccountForm
+                            ref={formRef}
+                            onSubmit={handleSubmit}
+                        >
                             <InputMasked
                                 mask="CPF"
                                 name="cpf"
