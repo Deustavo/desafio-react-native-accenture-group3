@@ -71,10 +71,9 @@ export default function ForgotPasswd() {
             });
         } catch (err) {
             setLoading(false);
+            alert("Usuário não encontrado");
             if (err instanceof Yup.ValidationError) {
                 const errors = getValidationErrors(err);
-                // This is the way to set errors with unform. Each key is the input name and
-                // it will be set on the 'error' variable coming from the useField hook in the Comp
                 formRef.current?.setErrors(errors);
                 return;
             }
