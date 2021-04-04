@@ -40,7 +40,7 @@ export const ViewPlans = styled.View`
     max-width: 190px;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(140, 82, 229);
+    border: 2px solid #474898;
     border-radius: 10px;
     margin-top: 15px;
     padding: 25px 0;
@@ -64,7 +64,7 @@ export const LettersViewPlans = styled.Text`
   height: 30px;
   width: 30px;
   padding-top: 4px;
-  background-color: rgb(140, 82, 229);
+  background-color: #474898;
   border-radius: 50px;
   font-size: 16px;
 `

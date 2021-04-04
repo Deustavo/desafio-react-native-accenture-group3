@@ -38,7 +38,7 @@ export default function DashboardTabNavigator() {
             })}
             tabBarOptions={{
                 activeTintColor: 'white',
-                inactiveTintColor: '#474898',
+                inactiveTintColor: '#777',
                 showLabel: true,
                 style: {
                     borderTopWidth: 0,
