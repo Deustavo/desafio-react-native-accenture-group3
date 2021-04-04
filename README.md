@@ -1,6 +1,6 @@
 # Desafio REACT NATIVE | GAMA | ACCENTURE
 
-![screen](.src/assets/screen.jpeg)
+![screen](./src/assets/screen.jpeg)
 
 ## Sobre o desafio 💪
 O Solidty Bank é um banco digital criado para o desafio da [Accenture](https://www.accenture.com/br-pt) orientado pela [Gama Academy](https://www.gama.academy/).<br />
