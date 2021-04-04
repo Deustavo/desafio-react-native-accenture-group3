@@ -4,7 +4,7 @@ export const LinksBottom = styled.Text`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #8c52e5;
+    color: #5E60CE;
     margin-top: 20px;
     font-size: 13px;
     font-weight: 500;

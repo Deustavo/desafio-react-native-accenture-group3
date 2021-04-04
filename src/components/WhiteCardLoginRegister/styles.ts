@@ -15,7 +15,7 @@ export const ContainerCard = styled.View<InterfaceContainerCard>`
 `;
 
 export const TitleCard = styled.Text`
-    color: #000000;
+    color: #5E60CE;
     font-size: 21px;
     font-weight: bold;
     text-align: center;

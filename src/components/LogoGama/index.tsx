@@ -13,8 +13,9 @@ const ContainerLogoGama: React.FC<ContainerLogoProps> = ({
 
     return (
         <ContainerLogo _mTop={mTop} _mBottom={mBottom}>
-            <LogoGama source={require('../../assets/logo-gama-academy.png')}/>
+            <LogoGama source={require('../../assets/solidy-bank.png')}/>
         </ContainerLogo>
+        
     );
 };
 

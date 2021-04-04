@@ -122,7 +122,7 @@ export default function RedefinePassword() {
                             <Feather
                                 name="chevron-right"
                                 size={13}
-                                color="#8C52E5"
+                                color="#5E60CE"
                             />
                         </LinksBottom>
                     </WhiteCardLoginRegister>
