@@ -14,10 +14,9 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ valor, data }) => {
     const formattedDate = formatDate(data);
     return (
         <S.RowLastHistoric>
-            <S.LineRowSeparatorHistoric>|</S.LineRowSeparatorHistoric>
             <TextBalance
                 _Color={valor < 0 ? '#F45F5F' : undefined}
-                _mTop="10px"
+                _mTop="24px"
             >
                 <FormattedBRL value={valor} />
             </TextBalance>
