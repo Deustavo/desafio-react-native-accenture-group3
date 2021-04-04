@@ -72,7 +72,7 @@ const DrawerInfoUser: React.FC<DrawerProps> = (props) => {
                         iconName="x"
                         iconSize={33}
                         iconColor="#FFFFFF"
-                        bgColor="#8C52E5"
+                        bgColor="#474898"
                         padding="5px 20px"
                         marginTop="40px"
                         onPress={removeAuth}

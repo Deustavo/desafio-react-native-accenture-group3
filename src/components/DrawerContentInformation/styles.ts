@@ -9,17 +9,17 @@ export const ContainerInformationRow = styled.View `
 `
 
 export const TitleContainer = styled.Text `
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 19px;
   text-align: left;
-  color: #878686;
+  color: #5E60CE;
 `
 
 export const TextContent = styled.Text `
-  font-size: 21px;
+  font-size: 22px;
   padding-top: 2px;
   font-weight: bold;
   text-align: left;
-  color: #8C52E5;
+  color: #5E60CE;
 `

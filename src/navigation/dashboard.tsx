@@ -21,7 +21,7 @@ export default function DashboardTabNavigator() {
                     };
                     const routes: Routes = {
                         Home: (
-                            <Ionicons name="home-outline" size={24} color={"#ffffff"} />
+                            <Ionicons name="home-outline" size={24} color="#ffffff" />
                         ),
                         Transfers: (
                             <FontAwesome name="exchange" size={24} color="#ffffff" />
