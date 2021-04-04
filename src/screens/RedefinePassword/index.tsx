@@ -16,7 +16,15 @@ import Input from '../../components/Input';
 import getValidationErrors from '../../utils/getValidationErrors';
 import api from '../../services/api';
 
-//  criar interfaces
+interface IResetPasswdForm{
+    passwd: string,
+    confirmPasswd: string
+}
+
+interface IParams{
+    login: string,
+    senhaTemporaria: string
+}
 
 export default function RedefinePassword() {
     const [loading, setLoading] = useState(false);
@@ -67,6 +75,7 @@ export default function RedefinePassword() {
             navLogin();
         } catch (err) {
             setLoading(false);
+            alert("Falha ao trocar senha. Entre em contato com o suporte.")
             if (err instanceof Yup.ValidationError) {
                 const errors = getValidationErrors(err);
                 formRef.current?.setErrors(errors);
@@ -122,7 +131,7 @@ export default function RedefinePassword() {
                             <Feather
                                 name="chevron-right"
                                 size={13}
-                                color="#8C52E5"
+                                color="#5E60CE"
                             />
                         </LinksBottom>
                     </WhiteCardLoginRegister>

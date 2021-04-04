@@ -153,7 +153,7 @@ export default function Transfers() {
             enabled
             keyboardVerticalOffset={100}
         >
-            <ContainerScroll _bgColor="#474898">
+            <ContainerScroll _bgColor="#5E60CE">
                 <S.HeaderDashboard>
                     <S.TextHeaderDashboard style={{ color: '#fff' }}>
                         Transferências
@@ -223,7 +223,7 @@ export default function Transfers() {
                                 iconSize={25}
                                 marginTop="40px"
                                 marginBottom="20px"
-                                bgColor={missingDate ? '#474898' : '#5E60CE'}
+                                bgColor={missingDate ? '#5E60CE' : '#474898'}
                                 color="#fff"
                             />
 

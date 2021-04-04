@@ -87,6 +87,7 @@ export default function Login() {
                 return;
             }
             console.log(err);
+            alert("Usuário ou senha incorreto.");
         }
     }
 
@@ -115,7 +116,7 @@ export default function Login() {
         >
             <ContainerScroll>
                 <SafeAreaView />
-                <ContainerLogoGama mTop="-64px" mBottom="-64px" />
+                <ContainerLogoGama mTop="40px" mBottom="40px" />
                 <ContainerViewLoginRegister>
                     <WhiteCardLoginRegister title="Seja bem vindo, informe seus dados para logar.">
                         <LoginForm ref={formRef} onSubmit={loginSysGama}>

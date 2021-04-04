@@ -170,7 +170,7 @@ export default function CreateAccount() {
                                 <Feather
                                     name="chevron-left"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />{' '}
                                 Voltar para o Login
                             </LinksBottom>

@@ -23,7 +23,7 @@ export default function ConfirmAccountCreate() {
     }, [navigation]);
 
     function navLogin() {
-        // redirecionar para screen de login
+        navigation.navigate('Login');
     }
 
     return (

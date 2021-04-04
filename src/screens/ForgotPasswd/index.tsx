@@ -28,11 +28,11 @@ export default function ForgotPasswd() {
     const loginInputRef = useRef<TextInput>(null);
 
     function navLogin() {
-        // redirecionar para screen de login
+        navigation.navigate('Login');
     }
 
     function navCreateAccount() {
-        // redirecionar para screen de criar conta
+        navigation.navigate('CreateAccount');
     }
 
     const submitFormButton = () => {
@@ -71,10 +71,9 @@ export default function ForgotPasswd() {
             });
         } catch (err) {
             setLoading(false);
+            alert("Usuário não encontrado");
             if (err instanceof Yup.ValidationError) {
                 const errors = getValidationErrors(err);
-                // This is the way to set errors with unform. Each key is the input name and
-                // it will be set on the 'error' variable coming from the useField hook in the Comp
                 formRef.current?.setErrors(errors);
                 return;
             }
@@ -130,7 +129,7 @@ export default function ForgotPasswd() {
                                 <Feather
                                     name="chevron-right"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />
                             </LinksBottom>
                             <LinksBottom onPress={navCreateAccount}>
@@ -138,7 +137,7 @@ export default function ForgotPasswd() {
                                 <Feather
                                     name="chevron-right"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />
                             </LinksBottom>
                         </Form>

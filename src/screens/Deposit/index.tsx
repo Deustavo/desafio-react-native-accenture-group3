@@ -145,7 +145,7 @@ export default function Deposit() {
             enabled
             keyboardVerticalOffset={20}
         >
-            <ContainerScroll _bgColor="#474898">
+            <ContainerScroll _bgColor="#5E60CE">
                 <S.HeaderDashboard>
                     <S.TextHeaderDashboard style={{ color: '#fff' }}>
                         Depósitos

@@ -18,5 +18,5 @@ export const ContainerLogo = styled.View<LogoProps>`
 export const LogoGama = styled.Image`
   width: 100%;
   max-width: 249px;
-  max-height: 74.5;
+  height: 74px;
 `;
