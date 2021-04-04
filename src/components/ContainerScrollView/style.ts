@@ -9,5 +9,5 @@ interface ContainerScrollViewProps {
 export const ContainerScrollView = styled(ScrollView)<ContainerScrollViewProps>`
     width: ${Dimensions.get('window').width}px;
     height: ${Dimensions.get('window').height}px;
-    background-color: ${props => props._bgColor || "#5E60CE"};
+    background-color: ${(props) => props._bgColor || '#474898'};
 `;

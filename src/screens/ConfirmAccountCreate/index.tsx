@@ -44,7 +44,7 @@ export default function ConfirmAccountCreate() {
                         iconSize={25}
                         marginTop="20px"
                         marginBottom="30px"
-                        bgColor="#63dc3f"
+                        bgColor="#474898"
                         color="#fff"
                         onPress={navLogin}
                         _width="60%"

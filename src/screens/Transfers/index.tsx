@@ -1,10 +1,10 @@
-import React, {useRef, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
-import {FormHandles} from '@unform/core';
+import { FormHandles } from '@unform/core';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import {useNavigation} from '@react-navigation/native';
-import {KeyboardAvoidingView, Platform, TextInput, Text} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { KeyboardAvoidingView, Platform, TextInput, Text } from 'react-native';
 import shortid from 'shortid';
 
 import ButtonPrimary from '../../components/ButtonPrimary';
@@ -13,19 +13,19 @@ import * as S from './styles';
 import Input from '../../components/Input';
 import WhiteCardDashboard from '../../components/WhiteCardDashboard';
 import ContainerViewDashboard from '../../components/ContainerDashboard';
-import {createFloat} from '../../utils/helpers';
+import { createFloat } from '../../utils/helpers';
 import api from '../../services/api';
-import {debitTransactionSuccess} from '../../store/modules/accounts/actions';
+import { debitTransactionSuccess } from '../../store/modules/accounts/actions';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { IRootState } from '../../store';
 import InputMasked from '../../components/InputMasked';
-import {Feather} from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 // criar interface
-interface ITransferForm{
-    descricao: string,
-    valor: number,
-    destinatario: string,
+interface ITransferForm {
+    descricao: string;
+    valor: number;
+    destinatario: string;
 }
 
 export default function Transfers() {
@@ -40,11 +40,11 @@ export default function Transfers() {
     const [missingDate, setMissingDate] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const {debitAccount, transactionTypes} = useSelector(
+    const { debitAccount, transactionTypes } = useSelector(
         (state: IRootState) => state.accounts
     );
 
-    const {user} = useSelector((state: IRootState) => state.user);
+    const { user } = useSelector((state: IRootState) => state.user);
 
     const showDatePicker = () => {
         setDatePickerVisibility(true);
@@ -70,10 +70,10 @@ export default function Transfers() {
     };
 
     async function handleSubmit({
-                                    descricao,
-                                    valor,
-                                    destinatario,
-                                }: ITransferForm) {
+        descricao,
+        valor,
+        destinatario,
+    }: ITransferForm) {
         try {
             valor = valor && createFloat(valor);
             formRef.current?.setErrors({});
@@ -95,8 +95,8 @@ export default function Transfers() {
             });
 
             await schema.validate(
-                {descricao, valor, destinatario},
-                {abortEarly: false}
+                { descricao, valor, destinatario },
+                { abortEarly: false }
             );
 
             if (!date) {
@@ -118,9 +118,9 @@ export default function Transfers() {
                 planoConta: planoConta.id,
             };
 
-            const headers = {Authorization: user!.token!};
+            const headers = { Authorization: user!.token! };
 
-            await api.post(`lancamentos`, postData, {headers});
+            await api.post(`lancamentos`, postData, { headers });
             dispatch(
                 debitTransactionSuccess({
                     ...postData,
@@ -142,12 +142,22 @@ export default function Transfers() {
     }
 
     return (
-        <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}
-                              behavior={Platform.OS === "ios" ? "padding" : "height"} enabled
-                              keyboardVerticalOffset={100}>
-            <ContainerScroll _bgColor="#5E60CE">
+        <KeyboardAvoidingView
+            style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+            }}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            enabled
+            keyboardVerticalOffset={100}
+        >
+            <ContainerScroll _bgColor="#474898">
                 <S.HeaderDashboard>
-                    <S.TextHeaderDashboard style={{ color: '#fff' }}>Transferências</S.TextHeaderDashboard>
+                    <S.TextHeaderDashboard style={{ color: '#fff' }}>
+                        Transferências
+                    </S.TextHeaderDashboard>
                 </S.HeaderDashboard>
 
                 <ContainerViewDashboard>
@@ -159,82 +169,90 @@ export default function Transfers() {
                             <S.IconHeaderCard
                                 source={require('../../assets/icon-money.png')}
                             />
-                            <S.TextHeaderCard>Nova transferência</S.TextHeaderCard>
+                            <S.TextHeaderCard>
+                                Nova transferência
+                            </S.TextHeaderCard>
                         </S.HeaderCard>
                         <S.DepositForm ref={formRef} onSubmit={handleSubmit}>
-                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Destinatário</Text>
-                        <Input
-                            name="destinatario"
-                            placeholder="Destinatário"
-                            autoCorrect={false}
-                            autoCapitalize="none"
-                            returnKeyType="next"
-                            onSubmitEditing={() => {
-                                // Check out Input comp to details on this custom focus method
-                                descInputRef.current?.focus();
-                            }}
-                        />
-                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Descrição</Text>
-                        <Input
-                            name="descricao"
-                            placeholder="Descrição"
-                            autoCorrect={false}
-                            ref={descInputRef}
-                            returnKeyType="next"
-                            onSubmitEditing={() => {
-                                // Check out Input comp to details on this custom focus method
-                                valueInputRef.current?.focus();
-                            }}
-                        />
-                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Valor</Text>
-                        <InputMasked
-                            mask="BRL"
-                            name="valor"
-                            placeholder="Valor de depósito"
-                            autoCapitalize="none"
-                            keyboardType="number-pad"
-                            autoCorrect={false}
-                            ref={valueInputRef}
-                        />
+                            <Text style={{ width: '100%', fontWeight: 'bold' }}>
+                                Destinatário
+                            </Text>
+                            <Input
+                                name="destinatario"
+                                placeholder="Destinatário"
+                                autoCorrect={false}
+                                autoCapitalize="none"
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    // Check out Input comp to details on this custom focus method
+                                    descInputRef.current?.focus();
+                                }}
+                            />
+                            <Text style={{ width: '100%', fontWeight: 'bold' }}>
+                                Descrição
+                            </Text>
+                            <Input
+                                name="descricao"
+                                placeholder="Descrição"
+                                autoCorrect={false}
+                                ref={descInputRef}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    // Check out Input comp to details on this custom focus method
+                                    valueInputRef.current?.focus();
+                                }}
+                            />
+                            <Text style={{ width: '100%', fontWeight: 'bold' }}>
+                                Valor
+                            </Text>
+                            <InputMasked
+                                mask="BRL"
+                                name="valor"
+                                placeholder="Valor de depósito"
+                                autoCapitalize="none"
+                                keyboardType="number-pad"
+                                autoCorrect={false}
+                                ref={valueInputRef}
+                            />
 
-                        <ButtonPrimary
-                            onPress={showDatePicker}
-                            title="Selecione uma data"
-                            iconName="calendar"
-                            iconColor="#fff"
-                            iconSize={25}
-                            marginTop="40px"
-                            marginBottom="20px"
-                            bgColor={missingDate ? '#5E60CE' : '#474898' }
-                            color="#fff"
-                        />
+                            <ButtonPrimary
+                                onPress={showDatePicker}
+                                title="Selecione uma data"
+                                iconName="calendar"
+                                iconColor="#fff"
+                                iconSize={25}
+                                marginTop="40px"
+                                marginBottom="20px"
+                                bgColor={missingDate ? '#474898' : '#5E60CE'}
+                                color="#fff"
+                            />
 
-                        {missingDate && (
-                            <S.DateError>
-                                Por favor selecione uma data
-                            </S.DateError>
-                        )}
+                            {missingDate && (
+                                <S.DateError>
+                                    Por favor selecione uma data
+                                </S.DateError>
+                            )}
 
-                        <DateTimePickerModal
-                            isVisible={isDatePickerVisible}
-                            mode="date"
-                            onConfirm={handleConfirm}
-                            onCancel={hideDatePicker}
-                        />
+                            <DateTimePickerModal
+                                isVisible={isDatePickerVisible}
+                                mode="date"
+                                onConfirm={handleConfirm}
+                                onCancel={hideDatePicker}
+                            />
 
-                        <ButtonPrimary
-                            title="Realizar transferência"
-                            iconName="arrow-right"
-                            iconColor="#fff"
-                            iconSize={25}
-                            onPress={submitFormButton}
-                            marginTop="20px"
-                            marginBottom="30px"
-                            bgColor="#474898"
-                            color="#fff"
-                            style={{ borderRadius: 6 }}
-                            _loading={loading}
-                        />
+                            <ButtonPrimary
+                                title="Realizar transferência"
+                                iconName="arrow-right"
+                                iconColor="#fff"
+                                iconSize={25}
+                                onPress={submitFormButton}
+                                marginTop="20px"
+                                marginBottom="30px"
+                                bgColor="#474898"
+                                color="#fff"
+                                style={{ borderRadius: 6 }}
+                                _loading={loading}
+                            />
                         </S.DepositForm>
                     </WhiteCardDashboard>
                 </ContainerViewDashboard>
