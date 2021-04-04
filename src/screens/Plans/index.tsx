@@ -15,21 +15,21 @@ export default function Plans() {
 
     return (
         <ContainerScroll>
+            <S.HeaderDashboard>
+                <S.TextHeaderDashboard style={{ color: '#fff' }}>Planos</S.TextHeaderDashboard>
+            </S.HeaderDashboard>
             <ContainerViewDashboard>
                 <WhiteCardDashboard _MarginBottom="120px" _Padding="20px 20px 40px">
                     <S.HeaderCard>
                         <S.IconHeaderCard
                             source={require('../../assets/icon-money.png')}
                         />
-                        <S.TextHeaderCard>Planos</S.TextHeaderCard>
+                        <S.TextHeaderCard>Seus planos</S.TextHeaderCard>
                     </S.HeaderCard>
                     {transactionTypesKeys?.map((key) =>
                         transactionTypes![key].map((type) => {
                             return type.descricao && type.tipoMovimento ? (
                                 <S.RowLastHistoric key={type.id}>
-                                    <S.LineRowSeparatorHistoric>
-                                        |
-                                    </S.LineRowSeparatorHistoric>
                                     <S.ViewPlans>
                                         <S.TextViewPlans>{type.descricao === "DEPESAS"
                                             ? "DESPESAS"

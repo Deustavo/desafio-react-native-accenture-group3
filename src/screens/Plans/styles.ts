@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Dimensions } from 'react-native';
 
 export const HeaderCard = styled.View`
   width: 100%;
@@ -67,3 +68,19 @@ export const LettersViewPlans = styled.Text`
   border-radius: 50px;
   font-size: 16px;
 `
+
+export const HeaderDashboard = styled.View`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row;
+    width: ${Dimensions.get('window').width}px;
+    padding: 35px;
+`;
+
+export const TextHeaderDashboard = styled.Text`
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+    color: #8c52e5;
+`;
