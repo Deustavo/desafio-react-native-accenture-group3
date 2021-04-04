@@ -28,11 +28,11 @@ export default function ForgotPasswd() {
     const loginInputRef = useRef<TextInput>(null);
 
     function navLogin() {
-        // redirecionar para screen de login
+        navigation.navigate('Login');
     }
 
     function navCreateAccount() {
-        // redirecionar para screen de criar conta
+        navigation.navigate('CreateAccount');
     }
 
     const submitFormButton = () => {
@@ -130,7 +130,7 @@ export default function ForgotPasswd() {
                                 <Feather
                                     name="chevron-right"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />
                             </LinksBottom>
                             <LinksBottom onPress={navCreateAccount}>
@@ -138,7 +138,7 @@ export default function ForgotPasswd() {
                                 <Feather
                                     name="chevron-right"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />
                             </LinksBottom>
                         </Form>

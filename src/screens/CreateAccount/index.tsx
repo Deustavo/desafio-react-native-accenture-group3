@@ -150,7 +150,7 @@ export default function CreateAccount() {
                                 iconSize={25}
                                 marginTop="20px"
                                 marginBottom="30px"
-                                bgColor="#63dc3f"
+                                bgColor="#474898"
                                 color="#fff"
                                 onPress={submitFormButton}
                                 _loading={loading}
@@ -159,7 +159,7 @@ export default function CreateAccount() {
                                 <Feather
                                     name="chevron-left"
                                     size={13}
-                                    color="#8C52E5"
+                                    color="#5E60CE"
                                 />{' '}
                                 Voltar para o Login
                             </LinksBottom>
