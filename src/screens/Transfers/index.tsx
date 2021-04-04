@@ -205,7 +205,7 @@ export default function Transfers() {
                             iconSize={25}
                             marginTop="40px"
                             marginBottom="20px"
-                            bgColor={missingDate ? '#e6505c' : '#8c52e5'}
+                            bgColor={missingDate ? '#5E60CE' : '#474898' }
                             color="#fff"
                         />
 

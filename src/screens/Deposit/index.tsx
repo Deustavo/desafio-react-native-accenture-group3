@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import {FormHandles} from '@unform/core';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {useNavigation} from '@react-navigation/native';
-import {Dimensions, Image, KeyboardAvoidingView, Platform, TextInput} from 'react-native';
+import {Dimensions, Image, KeyboardAvoidingView, Platform, TextInput, Text} from 'react-native';
 import shortid from 'shortid';
 //
 import ButtonPrimary from '../../components/ButtonPrimary';
@@ -57,8 +57,8 @@ export default function Deposit() {
     };
 
     const navDashboard = () => {
-        //  setar loading como falso
-        //  redirecionar para screen da home
+        setLoading(false);
+        navigation.navigate('Home')
     };
 
     const submitFormButton = () => {
@@ -109,7 +109,6 @@ export default function Deposit() {
             dispatch(
                 debitTransactionSuccess({
                     ...postData,
-                    // Id must be created here since the API don't return it
                     id: shortid(),
                     valor: Number(valor),
                     planoConta,
@@ -130,12 +129,9 @@ export default function Deposit() {
     return (
         <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}
                               behavior={Platform.OS === "ios" ? "padding" : "height"} enabled keyboardVerticalOffset={20}>
-        <ContainerScroll _bgColor="#e6e6e6">
+        <ContainerScroll _bgColor="#5E60CE">
             <S.HeaderDashboard>
-                <S.TextHeaderDashboard>Olá, {user?.userName}</S.TextHeaderDashboard>
-                <S.CloseButton onPress={() => navigation.goBack()}>
-                    <Feather name="x" size={33} color="#8C52E5" />
-                </S.CloseButton>
+                <S.TextHeaderDashboard style={{ color: '#fff' }}>Depósitos</S.TextHeaderDashboard>
             </S.HeaderDashboard>
 
             <ContainerViewDashboard>
@@ -150,6 +146,7 @@ export default function Deposit() {
                         <S.TextHeaderCard>Depositos</S.TextHeaderCard>
                     </S.HeaderCard>
                     <S.DepositForm ref={formRef} onSubmit={handleSubmit}>
+                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Descrição</Text>
                         <Input
                             name="descricao"
                             placeholder="Descrição"
@@ -161,6 +158,7 @@ export default function Deposit() {
                             }}
                         />
 
+                        <Text style={{ width: '100%', fontWeight: 'bold' }}>Valor</Text>
                         <InputMasked
                             mask="BRL"
                             name="valor"
@@ -179,7 +177,7 @@ export default function Deposit() {
                             iconSize={25}
                             marginTop="40px"
                             marginBottom="20px"
-                            bgColor={missingDate ? '#e6505c' : '#8c52e5'}
+                            bgColor={missingDate ? '#5E60CE' : '#474898' }
                             color="#fff"
                         />
 
@@ -204,7 +202,7 @@ export default function Deposit() {
                             onPress={submitFormButton}
                             marginTop="20px"
                             marginBottom="30px"
-                            bgColor="#63dc3f"
+                            bgColor="#474898"
                             color="#fff"
                             _loading={loading}
                         />
