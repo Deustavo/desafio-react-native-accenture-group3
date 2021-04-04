@@ -1,43 +1,32 @@
-## Desafio REACT NATIVE | GAMA | ACCENTURE
+# Desafio REACT NATIVE | GAMA | ACCENTURE
 
-![screen](./screen.jpeg)
+## Sobre o desafio 💪
+O Solidty Bank é um banco digital criado para o desafio da [Accenture](https://www.accenture.com/br-pt) orientado pela [Gama Academy](https://www.gama.academy/).<br />
+### Ferramentas e conhecimentos
+- React Native<br />
+- React Toastify<br />
+- Typescript<br />
+- Styled Components<br />
+- Bootstrap<br />
+- Axios<br />
+- Figma<br />
+- Metodologia ágil (scrum)<br />
+- Notion<br />
+<br /><br />
 
-Esta é a continuação do desafio de React, fique atendo às especificações.
+## Como nos organizamos 🤟
+[Nosso Figma](https://www.figma.com/file/tnPgxpCgciBrc2JHPiiSKm/Design?node-id=262%3A1670)<br />
+[Divisão de tarefas no Notion](https://www.notion.so/b4cd5ae2c815420893c0253373091d65?v=bd8e0b7614454eb68549fd2b63e40ea8)
+<br /><br /><br />
 
-Para iniciar seu projeto você deve:
-Baixar o repositório e instalar todas as dependências usando `yarn` ou `npm i`.
+## Equipe Solidty Bank 👊
+- [Gustavo Andrade](https://github.com/Deustavo)<br />
+- [Lucas Santos](https://github.com/Lucas155)<br />
+- [Marcos de Souza](https://github.com/marcoslavecchia)<br />
+- [Margot Garcia](https://github.com/margotpaon)<br />
+- [Mateus Breno](https://github.com/mateusbreno)
+<br /><br /><br />
 
-Para iniciar o projeto em modo desenvolvimento use o comando `yarn start` ou `npm run start`.
-
-# Para cumprir seu desafio você deve:
-
-1 - Em grupo adapte ao layou do seu projeto.
-
-2 - Iniciar seu projeto, você deve clonar este repositório e criar um novo para o grupo.
-
-3 - Se atente as funcionalidades, complete os gaps.
-
-4 - A estilização é de livre escolha, você pode usar qualquer pacote de sua preferêcia para a entrega final.
-
-5 - Atente-se a tipagem.
-
-6 - Atenção ao métodos de nossa api. Para saber mais, [clique aqui](https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/).
-
-7 - Sua aplicação deve ter as mesmas funcionalidades da versão que disponibilizamos online, você pode acessar clicando [aqui](https://react-accenture.vercel.app/).
-
-8 - Link de sua To do deve acompanhar na documentação de seu projeto.
-
-[Swagger](https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/)
-
-[Arquivo de Referência para API - Insomnia](https://drive.google.com/file/d/1QJ5MnaidHOO4iRihoUB6rsvA-E99OIAQ/view?usp=sharing)
-
-[Visualizar projeto online](https://react-accenture.vercel.app/)
-
-- [x] Marque o usuário @mrdouglasmorais em seu entregavel.
-- [x] Documente o seu entregável.
-- [x] Temos um modelo de organização de tarefas você pode visualizar [clicando aqui](https://www.notion.so/2cb3a2864f5143f99a2bc3b4e7cb1247?v=bb4cfdb8149041e0974c3c6f5cf6573d).
-- [x] Em caso de dúvidas, chamem no Slack.
-
-
-Boa sorte!
-Att: Douglas 
+## Agradecimento especial ✌
+Nosso professor orientador, muito obrigado pelos ensinamentos!<br />
+[Douglas Morais](https://github.com/mrdouglasmorais)<br /><br />
