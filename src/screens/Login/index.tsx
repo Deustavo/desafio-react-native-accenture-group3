@@ -115,7 +115,7 @@ export default function Login() {
         >
             <ContainerScroll>
                 <SafeAreaView/>
-                    <ContainerLogoGama mTop="50px" mBottom="20px" />
+                    <ContainerLogoGama mTop="-64px" mBottom="-64px" />
                     <ContainerViewLoginRegister>
                         <WhiteCardLoginRegister title="Seja bem vindo, informe seus dados para logar.">
                             <LoginForm ref={formRef} onSubmit={loginSysGama}>
