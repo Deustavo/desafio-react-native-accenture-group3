@@ -142,12 +142,9 @@ export default function Transfers() {
         <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}
                               behavior={Platform.OS === "ios" ? "padding" : "height"} enabled
                               keyboardVerticalOffset={100}>
-            <ContainerScroll _bgColor="#e6e6e6">
+            <ContainerScroll _bgColor="#5E60CE">
                 <S.HeaderDashboard>
-                    <S.TextHeaderDashboard>Olá, {user?.userName}</S.TextHeaderDashboard>
-                    <S.CloseButton onPress={() => navigation.goBack()}>
-                        <Feather name="x" size={33} color="#8C52E5"/>
-                    </S.CloseButton>
+                    <S.TextHeaderDashboard style={{ color: '#fff' }}>Transferências</S.TextHeaderDashboard>
                 </S.HeaderDashboard>
 
                 <ContainerViewDashboard>
